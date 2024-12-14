@@ -1,0 +1,62 @@
+python manage.py shell
+
+from my_app.models import User, Product
+
+from datetime import datetime
+
+# Crear usuarios
+User.objects.create(
+    first_name="Alice",
+    last_name="Johnson",
+    email="alice@example.com",
+    country_iso="USA",
+    created_at=datetime(2023, 12, 14)
+)
+
+User.objects.create(
+    first_name="Bob",
+    last_name="Smith",
+    email="bob@example.com",
+    country_iso="CAN",
+    created_at=datetime(2023, 12, 13)
+)
+
+User.objects.create(
+    first_name="Carlos",
+    last_name="Lopez",
+    email="carlos@example.com",
+    country_iso="MEX",
+    created_at=datetime(2023, 12, 12)
+)
+
+# Crear productos
+Product.objects.create(
+    name="Laptop",
+    price=1200.00,
+    stock=10,
+    created_at=datetime(2023, 12, 14)
+)
+
+Product.objects.create(
+    name="Smartphone",
+    price=800.00,
+    stock=25,
+    created_at=datetime(2023, 12, 13)
+)
+
+Product.objects.create(
+    name="Headphones",
+    price=150.00,
+    stock=0,  # Sin stock
+    created_at=datetime(2023, 12, 12)
+)
+
+# Verificar usuarios
+for user in User.objects.all():
+    print(user)
+
+# Verificar productos
+for product in Product.objects.all():
+    print(product)
+
+exit()

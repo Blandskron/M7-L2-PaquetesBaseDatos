@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products In Stock</title>
+</head>
+<body>
+    <h1>Available Products</h1>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }} - ${{ product.price }} (Stock: {{ product.stock }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
